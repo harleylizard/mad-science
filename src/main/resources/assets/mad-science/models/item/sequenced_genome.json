@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mad-science:item/sequenced_genome_overlay_0",
+    "layer1": "mad-science:item/sequenced_genome_overlay_1"
+  }
+}

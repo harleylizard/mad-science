@@ -5,5 +5,10 @@
   "item.mad-science.syringe_of_chicken_dna": "Syringe of Chicken DNA",
   "item.mad-science.syringe_of_cow_dna": "Syringe of Cow DNA",
   "item.mad-science.syringe_of_pig_dna": "Syringe of Pig DNA",
-  "item.mad-science.syringe_of_sheep_dna": "Syringe of Sheep DNA"
+  "item.mad-science.syringe_of_sheep_dna": "Syringe of Sheep DNA",
+  "item.mad-science.empty_data_reel": "Empty Data Reel",
+  "item.mad-science.sequenced_chicken_genome": "Sequenced Chicken Genome",
+  "item.mad-science.sequenced_cow_genome": "Sequenced Cow Genome",
+  "item.mad-science.sequenced_pig_genome": "Sequenced Pig Genome",
+  "item.mad-science.sequenced_sheep_genome": "Sequenced Sheep Genome"
 }

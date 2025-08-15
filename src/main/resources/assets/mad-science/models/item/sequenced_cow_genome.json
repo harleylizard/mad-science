@@ -1,0 +1,7 @@
+{
+  "parent": "mad-science:item/sequenced_genome",
+  "textures": {
+    "layer2": "mad-science:item/sequenced_cow_genome",
+    "layer3": "mad-science:item/sequenced_cow_genome_overlay"
+  }
+}

@@ -37,6 +37,11 @@ public final class MadScience implements ModInitializer {
                     output.accept(MadScienceItems.SYRINGE_OF_COW_DNA);
                     output.accept(MadScienceItems.SYRINGE_OF_PIG_DNA);
                     output.accept(MadScienceItems.SYRINGE_OF_SHEEP_DNA);
+                    output.accept(MadScienceItems.EMPTY_DATA_REEL);
+                    output.accept(MadScienceItems.SEQUENCED_CHICKEN_GENOME);
+                    output.accept(MadScienceItems.SEQUENCED_COW_GENOME);
+                    output.accept(MadScienceItems.SEQUENCED_PIG_GENOME);
+                    output.accept(MadScienceItems.SEQUENCED_SHEEP_GENOME);
                 })
                 .build();
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, resourceLocation(MOD_ID), itemGroup);
