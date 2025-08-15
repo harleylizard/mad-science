@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mad-science:item/syringe_of_dna_overlay_0",
+    "layer1": "mad-science:item/syringe_of_dna_overlay_1"
+  }
+}

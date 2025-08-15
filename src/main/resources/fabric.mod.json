@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "mad-science",
+  "version": "$version",
+  "name": "Mad Science",
+  "description": "",
+  "authors": [
+    "harleylizard",
+    "Maxwolf"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mad-science-new",
+    "sources": "https://github.com/harleylizard/mad-science"
+  },
+  "license": "All Rights Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.harleylizard.madscience.common.MadScience"
+    ],
+    "client": [
+      "com.harleylizard.madscience.client.MadScienceClient"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  },
+  "custom": {
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "mad-science:item/syringe_of_dna",
+  "textures": {
+    "layer2": "mad-science:item/syringe_of_sheep_dna",
+    "layer3": "mad-science:item/syringe_of_sheep_dna_overlay"
+  }
+}
