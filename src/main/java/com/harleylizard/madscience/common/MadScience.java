@@ -25,6 +25,7 @@ public final class MadScience implements ModInitializer {
     public void onInitialize() {
         MadScienceBlocks.register();
         MadScienceItems.register();
+        MadScienceComponents.register();
 
         var itemGroup = FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup.mad-science"))

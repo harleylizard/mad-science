@@ -1,6 +1,7 @@
 package com.harleylizard.madscience.common;
 
 import com.harleylizard.madscience.common.item.EmptySyringeItem;
+import com.harleylizard.madscience.common.item.SpoilingItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
@@ -27,6 +28,6 @@ public final class MadScienceItems {
     }
 
     private static Item syringeOfDna() {
-        return new Item(new Item.Properties().stacksTo(1));
+        return new SpoilingItem(new Item.Properties().stacksTo(1), DIRTY_SYRINGE);
     }
 }
