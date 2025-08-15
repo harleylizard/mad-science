@@ -2,7 +2,6 @@ package com.harleylizard.madscience.common.item;
 
 import com.harleylizard.madscience.common.MadScienceComponents;
 import com.harleylizard.madscience.common.Util;
-import com.harleylizard.madscience.common.spoilage.Spoilage;
 import com.harleylizard.madscience.common.spoilage.Spoils;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.Entity;
@@ -12,10 +11,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public final class SpoilingItem extends Item implements Spoils {
+    public static final int SPOILAGE = 275;
+
     private final Item spoiled;
 
     public SpoilingItem(Properties properties, Item spoiled) {
-        super(properties.component(MadScienceComponents.SPOILAGE, new Spoilage(0)));
+        super(properties.component(MadScienceComponents.SPOILAGE, 0));
         this.spoiled = spoiled;
     }
 
@@ -34,7 +35,14 @@ public final class SpoilingItem extends Item implements Spoils {
     public void tick(ItemStack itemStack, Container container, Item item, int time) {
         if (time % 20 == 0) {
             var component = MadScienceComponents.SPOILAGE;
-            itemStack.set(component, itemStack.get(component).tick(itemStack, container, item));
+
+            var spoilage = itemStack.get(component).intValue();
+            if (spoilage < SPOILAGE) {
+                spoilage++;
+            } else if (replace(itemStack, container, item)) {
+                itemStack.shrink(1);
+            }
+            itemStack.set(component, spoilage);
         }
     }
 
@@ -55,10 +63,20 @@ public final class SpoilingItem extends Item implements Spoils {
     }
 
     public float percentage(ItemStack itemStack) {
-        return (float) spoilage(itemStack) / (float) Spoilage.SPOILAGE;
+        return (float) spoilage(itemStack) / (float) SPOILAGE;
     }
 
     public int spoilage(ItemStack itemStack) {
-        return itemStack.get(MadScienceComponents.SPOILAGE).spoilage();
+        return itemStack.get(MadScienceComponents.SPOILAGE).intValue();
+    }
+
+    private static boolean replace(ItemStack itemStack, Container container, Item item) {
+        for (var i = 0; i < container.getContainerSize(); i++) {
+            if (container.getItem(i).equals(itemStack)) {
+                container.setItem(i, item.getDefaultInstance());
+                return true;
+            }
+        }
+        return false;
     }
 }

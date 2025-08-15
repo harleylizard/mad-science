@@ -1,12 +1,13 @@
 package com.harleylizard.madscience.common;
 
-import com.harleylizard.madscience.common.spoilage.Spoilage;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.util.ExtraCodecs;
 
 public final class MadScienceComponents {
-    public static final DataComponentType<Spoilage> SPOILAGE = DataComponentType.<Spoilage>builder().persistent(Spoilage.CODEC).networkSynchronized(Spoilage.STREAM_CODEC).build();
+    public static final DataComponentType<Integer> SPOILAGE = DataComponentType.<Integer>builder().persistent(ExtraCodecs.NON_NEGATIVE_INT).networkSynchronized(ByteBufCodecs.VAR_INT).build();
 
     public static void register() {
         register("spoilage", SPOILAGE);

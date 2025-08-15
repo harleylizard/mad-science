@@ -24,9 +24,8 @@ public final class ServerLevelMixin {
                 var y = ((j / 16) % 16) + (chunk.getSectionYFromSectionIndex(m) << 4);
                 var z = (j / (16 * 16)) + (pos.z << 4);
 
-                blockPos.set(x, y, z);
                 if (section.getBlockState(x & 0xF, y & 0xF, z & 0xF).getBlock() instanceof SpoilsContainer container) {
-                    container.mad_science$tick((ServerLevel) (Object) this, blockPos.immutable());
+                    container.mad_science$tick((ServerLevel) (Object) this, blockPos.set(x, y, z).immutable());
                 }
             }
         }
