@@ -1,11 +1,12 @@
 package com.harleylizard.madscience.common;
 
+import com.harleylizard.madscience.common.item.EmptySyringeItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 
 public final class MadScienceItems {
-    public static final Item EMPTY_SYRINGE = new Item(new Item.Properties());
+    public static final Item EMPTY_SYRINGE = new EmptySyringeItem(new Item.Properties());
     public static final Item DIRTY_SYRINGE = new Item(new Item.Properties());
     public static final Item SYRINGE_OF_CHICKEN_DNA = syringeOfDna();
     public static final Item SYRINGE_OF_COW_DNA = syringeOfDna();
